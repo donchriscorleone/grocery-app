@@ -1,13 +1,243 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+:root {
+  --primary: #fad586;
+  --secondary: #184d47;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--primary);
+}
+
+.heading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 10px;
+  height: 7vh;
+}
+
+.shopping-cart-icon {
+  vertical-align: middle;
+  color: var(--secondary);
+  margin-right: 5px;
+}
+
+.heading-container h1 {
+  font-size: 1.2em;
+  text-align: center;
+  border-bottom: 5px solid var(--secondary);
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 20px;
+}
+
+.form input {
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  padding: 7px 5px;
+  box-shadow: var(--light-shadow);
+  font-size: 0.9em;
+  color: var(--secondary);
+}
+
+.form input:focus {
+  box-shadow: var(--dark-shadow);
+}
+
+.form button {
+  border-radius: 7px;
+  outline: none;
+  background-color: var(--secondary);
+  color: var(--primary);
+  border: 2px solid var(--secondary);
+  padding: 8px 5px;
+  box-shadow: var(--light-shadow);
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+
+.form button:hover {
+  background-color: var(--primary);
+  color: var(--secondary);
+}
+
+.list-container {
+  margin: 40px;
+  text-align: center;
+}
+
+.item-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 10px;
+  margin: 10px;
+  justify-items: center;
+}
+
+.item-container p {
+  place-self: center stretch;
+  font-size: 1.1em;
+  color: var(--secondary);
+}
+
+.item-container button {
+  width: 10vw;
+  outline: none;
+  box-shadow: var(--dark-shadow);
+  border-radius: 10px;
+  border: 2px solid var(--secondary);
+  background-color: #fff;
+}
+
+.item-container button:hover {
+  background-color: var(--primary);
+  border-color: var(--secondary);
+}
+
+.danger,
+.success {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.danger p,
+.success p {
+  font-size: 1.1em;
+  color: #fff;
+
+  border-radius: 10px;
+  padding: 9px 10px;
+}
+
+.danger p {
+  background-color: crimson;
+}
+
+.success p {
+  background-color: forestgreen;
+}
+
+@media screen and (min-width: 550px) {
+  * {
+    font-size: 18px;
+  }
+  .heading-container {
+    margin: 67px 15px;
+    height: 8vh;
+  }
+  .shopping-cart-icon {
+    margin-right: 9px;
+  }
+  .heading-container h1 {
+    font-size: 1.4em;
+    border-bottom: 7px solid var(--secondary);
+  }
+
+  .form {
+    gap: 25px;
+    margin: 25px 25px;
+  }
+
+  .form input {
+    font-size: 1.2em;
+  }
+  .form button {
+    border-radius: 8px;
+    padding: 9px 7px;
+    font-size: 1.2em;
+  }
+  .list-container {
+    margin: 50px;
+  }
+
+  .item-container {
+    column-gap: 12px;
+    margin: 12px;
+  }
+
+  .item-container p {
+    font-size: 1.3em;
+  }
+
+  .item-container button {
+    width: 12vw;
+  }
+  .danger p,
+  .success p {
+    font-size: 1.2em;
+    padding: 10px 12px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  * {
+    font-size: 20px;
+  }
+  .heading-container {
+    margin: 70px 20px;
+    height: 10vh;
+  }
+  .shopping-cart-icon {
+    margin-right: 12px;
+  }
+  .heading-container h1 {
+    font-size: 1.6em;
+    border-bottom: 9px solid var(--secondary);
+  }
+
+  .form {
+    gap: 30px;
+    margin: 30px 28px;
+  }
+
+  .form input {
+    font-size: 1.4em;
+  }
+  .form button {
+    border-radius: 9px;
+    padding: 10px 9px;
+    font-size: 1.3em;
+  }
+  .list-container {
+    margin: 70px;
+  }
+
+  .item-container {
+    column-gap: 14px;
+    margin: 15px;
+  }
+
+  .item-container p {
+    font-size: 1.4em;
+  }
+
+  .item-container button {
+    width: 15vw;
+  }
+  .danger p,
+  .success p {
+    font-size: 1.4em;
+    padding: 20px 15px;
+  }
 }
